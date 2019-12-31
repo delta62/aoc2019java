@@ -6,30 +6,30 @@ import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CardinalDirectionTest {
+class DirectionTest {
 
     @Test
     void Parse_U_Up() throws ParseException {
-        assertEquals(CardinalDirection.parse('U'), CardinalDirection.Up);
+        assertEquals(Direction.parse('U'), Direction.Up);
     }
 
     @Test
     void Parse_D_Down() throws ParseException {
-        assertEquals(CardinalDirection.parse('D'), CardinalDirection.Down);
+        assertEquals(Direction.parse('D'), Direction.Down);
     }
 
     @Test
     void Parse_L_Left() throws ParseException {
-        assertEquals(CardinalDirection.parse('L'), CardinalDirection.Left);
+        assertEquals(Direction.parse('L'), Direction.Left);
     }
 
     @Test
     void Parse_R_Right() throws ParseException {
-        assertEquals(CardinalDirection.parse('R'), CardinalDirection.Right);
+        assertEquals(Direction.parse('R'), Direction.Right);
     }
 
     @Test
     void Parse_X_ParseException() {
-        assertThrows(ParseException.class, () -> CardinalDirection.parse('x'));
+        assertThrows(ParseException.class, () -> Direction.parse('x'));
     }
 }

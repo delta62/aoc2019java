@@ -1,19 +1,20 @@
 package com.samnoedel.aoc2019.cartesian;
 
-public class Direction {
-    private final CardinalDirection dir;
-    private final int len;
+import java.text.ParseException;
 
-    public Direction(CardinalDirection dir, int len) {
-        this.dir = dir;
-        this.len = len;
-    }
+public enum Direction {
+    Up,
+    Down,
+    Left,
+    Right;
 
-    public int getLen() {
-        return len;
-    }
-
-    public CardinalDirection getDir() {
-        return dir;
+    public static Direction parse(char c) throws ParseException {
+        switch (c) {
+            case 'U': return Direction.Up;
+            case 'D': return Direction.Down;
+            case 'L': return Direction.Left;
+            case 'R': return Direction.Right;
+        }
+        throw new ParseException("" + c, 0);
     }
 }
